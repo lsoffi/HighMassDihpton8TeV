@@ -1,0 +1,18 @@
+#!/bin/bash 
+cd /afs/cern.ch/user/a/amarini/work/ProductionJanuary2014/CMSSW_6_1_1_CategoryFull/src/h2gglobe/UnfoldAnalysis/Macros
+rm /afs/cern.ch/user/a/amarini/work/ProductionJanuary2014/CMSSW_6_1_1_CategoryFull/src/h2gglobe/UnfoldAnalysis/Macros/jobs_v8_pToMscaled/jobInfo_Bin5_Job18.done
+rm /afs/cern.ch/user/a/amarini/work/ProductionJanuary2014/CMSSW_6_1_1_CategoryFull/src/h2gglobe/UnfoldAnalysis/Macros/jobs_v8_pToMscaled/jobInfo_Bin5_Job18.fail
+touch /afs/cern.ch/user/a/amarini/work/ProductionJanuary2014/CMSSW_6_1_1_CategoryFull/src/h2gglobe/UnfoldAnalysis/Macros/jobs_v8_pToMscaled/jobInfo_Bin5_Job18.run
+eval `scramv1 runtime -sh`
+cd $WORKDIR
+cp /afs/cern.ch/user/a/amarini/work/ProductionJanuary2014/CMSSW_6_1_1_CategoryFull/src/h2gglobe/UnfoldAnalysis/Macros/cms_hgg_datacard_8TeV_PtScaled_multipdf.root ./
+cp /afs/cern.ch/user/a/amarini/work/ProductionJanuary2014/CMSSW_6_1_1_CategoryFull/src/h2gglobe/UnfoldAnalysis/Macros/cms_hgg_datacard_8TeV_PtScaled_multipdf.txt ./
+cp /afs/cern.ch/user/a/amarini/work/ProductionJanuary2014/CMSSW_6_1_1_CategoryFull/src/h2gglobe/UnfoldAnalysis/Macros/CMS-HGG.root ./
+cp /afs/cern.ch/user/a/amarini/work/ProductionJanuary2014/CMSSW_6_1_1_CategoryFull/src/h2gglobe/UnfoldAnalysis/Macros/CMS-HGG_sigfit.root ./
+combine  -S0 -t -1 --expectSignal=1 --expectSignalMass=125.000000 cms_hgg_datacard_8TeV_PtScaled_multipdf.root -M MultiDimFit --X-rtd ADDNLL_FASTEXIT --keepFailures --cminDefaultMinimizerType Minuit2 --algo=grid --points=1000 --firstPoint=900 --lastPoint=950 -n Job_18_Bin_5 -m 125.000000 -P "r_Bin5" --floatOtherPOIs=1 --squareDistPoiStep --saveNLL
+
+RESULT=$?
+mv -v higgsCombine* /afs/cern.ch/user/a/amarini/work/ProductionJanuary2014/CMSSW_6_1_1_CategoryFull/src/h2gglobe/UnfoldAnalysis/Macros/jobs_v8_pToMscaled/
+
+rm /afs/cern.ch/user/a/amarini/work/ProductionJanuary2014/CMSSW_6_1_1_CategoryFull/src/h2gglobe/UnfoldAnalysis/Macros/jobs_v8_pToMscaled/jobInfo_Bin5_Job18.run
+[ "$RESULT" == "0" ] && { echo DONE; touch /afs/cern.ch/user/a/amarini/work/ProductionJanuary2014/CMSSW_6_1_1_CategoryFull/src/h2gglobe/UnfoldAnalysis/Macros/jobs_v8_pToMscaled/jobInfo_Bin5_Job18.done; } || touch  /afs/cern.ch/user/a/amarini/work/ProductionJanuary2014/CMSSW_6_1_1_CategoryFull/src/h2gglobe/UnfoldAnalysis/Macros/jobs_v8_pToMscaled/jobInfo_Bin5_Job18.fail

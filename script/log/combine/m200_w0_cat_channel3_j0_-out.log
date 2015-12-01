@@ -1,0 +1,1911 @@
+Sender: LSF System <lsfadmin@b6fd6be2ba.cern.ch>
+Subject: Job 528512537: <combine_m200_w0_cat_channel3_j0> in cluster batch Done
+
+Job <combine_m200_w0_cat_channel3_j0> was submitted from host <lxplus0045.cern.ch> by user <soffi> in cluster <batch>.
+Job was executed on host(s) <b6fd6be2ba.cern.ch>, in queue <8nh>, as user <soffi> in cluster <batch>.
+</afs/cern.ch/user/s/soffi> was used as the home directory.
+</afs/cern.ch/work/s/soffi/CMSSW611-Analysis/src/h2gglobe/ChiaraFitLimits/script> was used as the working directory.
+Started at Tue May 13 14:03:32 2014
+Results reported at Tue May 13 14:22:43 2014
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+cd /afs/cern.ch/work/s/soffi/CMSSW611-Analysis/src/h2gglobe/ChiaraFitLimits/script
+eval `scramv1 runtime -sh`
+cd 
+mkdir workspaces
+cp /afs/cern.ch/work/s/soffi/CMSSW611-Analysis/src/h2gglobe/ChiaraFitLimits/datacardWithAllSyst/HighMass-hgg_8TeV_m200.00_w0.10_channel3_GGH.txt ./
+cp /afs/cern.ch/work/s/soffi/CMSSW611-Analysis/src/h2gglobe/ChiaraFitLimits/workspaces/HighMass-hgg_8TeV_m200.00_w0.10.inputsig_GGH.root ./workspaces/
+cp  /afs/cern.ch/work/s/soffi/CMSSW611-Analysis/src/h2gglobe/ChiaraFitLimits/workspaces/HighMass-hgg.inputbkg_m200.00.root ./workspaces/
+
+combine HighMass-hgg_8TeV_m200.00_w0.10_channel3_GGH.txt -M Asymptotic -m 200 -D data_obs --run=both  -U  -S 1 -n _w0.10_channel3 --verbose 3
+mv -v higgsCombine_w0.10_channel3.Asymptotic.mH200.root /afs/cern.ch/work/s/soffi/CMSSW611-Analysis/src/h2gglobe/ChiaraFitLimits/channel3/
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :   1119.83 sec.
+    Max Memory :       102 MB
+    Max Swap   :       290 MB
+
+    Max Processes  :         6
+    Max Threads    :         7
+
+The output (if any) follows:
+
+@(#)CERN job starter $Date: 2010/06/23 14:22:16 $
+Working directory is </pool/lsf/soffi/528512537> on <>
+
+mkdir: cannot create directory `workspaces': File exists
+>>> including systematics
+>>> method used to compute upper limit is Asymptotic
+>>> random number generator seed is 123456
+
+Welcome to my rootlogon.C
+reading PhysicsTools/Utilities/macros/setTDRStyle.C
+and some personal modifications.
+
+Using shapes: qui si parra' la tua nobilitate
+(class RooCBCrujffPdf)40573472
+import (./workspaces/HighMass-hgg.inputbkg_m200.00.root,w_all:data_obs_cat3) -> shapeBkg_data_obs_cat3
+
+import (./workspaces/HighMass-hgg.inputbkg_m200.00.root,w_all:PhotonsMassBkg_cat3) -> shapeBkg_bkg_cat3
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooHistFunc::shapeSig_sig_cat3__norm
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooRealVar::MH
+Will try to make a binned dataset
+Observables: ['PhotonsMass']
+import (./workspaces/HighMass-hgg_8TeV_m200.00_w0.10.inputsig_GGH.root,w_all:PhotonsMassSig_cat3) -> shapeSig_sig_cat3
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooRealVar::PhotonsMass
+Will use category 'CMS_channel' to identify the 1 channels
+recyling (cat3,data_obs,) -> shapeBkg_data_obs_cat3
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing dataset data_obs
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooProdPdf::nuisancePdf
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing ProcessNormalization::n_exp_bincat3_proc_sig
+recyling (cat3,bkg,) -> shapeBkg_bkg_cat3
+
+recyling (cat3,bkg,) -> shapeBkg_bkg_cat3
+
+recyling (cat3,sig,) -> shapeSig_sig_cat3
+
+recyling (cat3,sig,) -> shapeSig_sig_cat3
+
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooProduct::n_exp_final_bincat3_proc_sig
+Creating RooAddPdf pdf_bincat3 with 2 elements
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooProdPdf::pdf_bincat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooAddPdf::pdf_bincat3_nuis
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooGenericPdf::shapeBkg_bkg_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooFormulaVar::par1ExpPAR_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooRealVar::PhotonsMass_bkg_8TeV_ExpPAR1_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooFormulaVar::par2ExpPAR_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooRealVar::PhotonsMass_bkg_8TeV_ExpPAR2_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooFFTConvPdf::shapeSig_sig_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooBreitWigner::SigModelBW_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooFormulaVar::meanBW_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooFormulaVar::sigmaBW_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooRealVar::sigmaBW_var_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooAddPdf::ResAddPdf_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooCBShape::ResCBneg_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooFormulaVar::CBpos_mean_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooRealVar::ReducedMass_sig_mean_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooFormulaVar::CBpos_sigma_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooRealVar::ReducedMass_sig_sigma_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooRealVar::rooSigmaCorr_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooFormulaVar::CBneg_alphaCB_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooRealVar::ReducedMass_sig_alphaCBneg_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooFormulaVar::CBneg_n_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooRealVar::ReducedMass_sig_Nneg_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooFormulaVar::CBpos_frac_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooRealVar::ReducedMass_sig_frac_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooCBShape::ResCBpos_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooFormulaVar::CBpos_alphaCB_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooRealVar::ReducedMass_sig_alphaCBpos_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooFormulaVar::CBpos_n_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooRealVar::ReducedMass_sig_Npos_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooSimultaneous::model_s
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooSimultaneous::model_b
+
+=== Using the following for ModelConfig ===
+Observables:             RooArgSet:: = (PhotonsMass,CMS_channel)
+Parameters of Interest:  RooArgSet:: = (r)
+Nuisance Parameters:     RooArgSet:: = (lumi_8TeV,eff_trig,global_syst,id_eff_ee,r9Eff,vtxEff,mShift_cat3,mSmear_cat3)
+Global Observables:      RooArgSet:: = (lumi_8TeV_In,eff_trig_In,global_syst_In,id_eff_ee_In,r9Eff_In,vtxEff_In,mShift_cat3_In,mSmear_cat3_In)
+PDF:                     RooSimultaneous::model_s[ indexCat=CMS_channel cat3=pdf_bincat3 ] = [#1] INFO:Eval -- RooRealVar::setRange(PhotonsMass) new range named 'refrange_fft_shapeSig_sig_cat3' created with bounds [159,388]
+[#1] INFO:Caching -- RooAbsCachedPdf::getCache(shapeSig_sig_cat3) creating new cache 0x39e92e0 with pdf SigModelBW_cat3_CONV_ResAddPdf_cat3_CACHE_Obs[PhotonsMass] for nset () with code 0
+22.4678
+
+
+=== Using the following for ModelConfig_bonly ===
+Observables:             RooArgSet:: = (PhotonsMass,CMS_channel)
+Parameters of Interest:  RooArgSet:: = (r)
+Nuisance Parameters:     RooArgSet:: = (lumi_8TeV,eff_trig,global_syst,id_eff_ee,r9Eff,vtxEff,mShift_cat3,mSmear_cat3)
+Global Observables:      RooArgSet:: = (lumi_8TeV_In,eff_trig_In,global_syst_In,id_eff_ee_In,r9Eff_In,vtxEff_In,mShift_cat3_In,mSmear_cat3_In)
+PDF:                     RooSimultaneous::model_b[ indexCat=CMS_channel cat3=pdf_bincat3_bonly ] = 3.73905e-06
+
+
+RooWorkspace(w) w contents
+
+variables
+---------
+(CMS_channel,MH,PhotonsMass,PhotonsMass_bkg_8TeV_ExpPAR1_cat3,PhotonsMass_bkg_8TeV_ExpPAR2_cat3,ReducedMass_sig_Nneg_cat3,ReducedMass_sig_Npos_cat3,ReducedMass_sig_alphaCBneg_cat3,ReducedMass_sig_alphaCBpos_cat3,ReducedMass_sig_frac_cat3,ReducedMass_sig_mean_cat3,ReducedMass_sig_sigma_cat3,eff_trig,eff_trig_In,global_syst,global_syst_In,id_eff_ee,id_eff_ee_In,lumi_8TeV,lumi_8TeV_In,mShift_cat3,mShift_cat3_In,mSmear_cat3,mSmear_cat3_In,n_exp_bincat3_proc_bkg,r,r9Eff,r9Eff_In,rooSigmaCorr_cat3,sigmaBW_var_cat3,vtxEff,vtxEff_In)
+
+p.d.f.s
+-------
+RooAddPdf::ResAddPdf_cat3[ CBpos_frac_cat3 * ResCBneg_cat3 + [%] * ResCBpos_cat3 ] = 1.50132e-13
+RooCBShape::ResCBneg_cat3[ m=PhotonsMass m0=CBpos_mean_cat3 sigma=CBpos_sigma_cat3 alpha=CBneg_alphaCB_cat3 n=CBneg_n_cat3 ] = 0
+RooCBShape::ResCBpos_cat3[ m=PhotonsMass m0=CBpos_mean_cat3 sigma=CBpos_sigma_cat3 alpha=CBpos_alphaCB_cat3 n=CBpos_n_cat3 ] = 2.2585e-11
+RooBreitWigner::SigModelBW_cat3[ x=PhotonsMass mean=meanBW_cat3 width=sigmaBW_cat3 ] = 0.00773175
+RooGaussian::eff_trig_Pdf[ x=eff_trig mean=eff_trig_In sigma=1 ] = 1
+RooGaussian::global_syst_Pdf[ x=global_syst mean=global_syst_In sigma=1 ] = 1
+RooGaussian::id_eff_ee_Pdf[ x=id_eff_ee mean=id_eff_ee_In sigma=1 ] = 1
+RooGaussian::lumi_8TeV_Pdf[ x=lumi_8TeV mean=lumi_8TeV_In sigma=1 ] = 1
+RooGaussian::mShift_cat3_Pdf[ x=mShift_cat3 mean=mShift_cat3_In sigma=1 ] = 1
+RooGaussian::mSmear_cat3_Pdf[ x=mSmear_cat3 mean=mSmear_cat3_In sigma=1 ] = 1
+RooSimultaneous::model_b[ indexCat=CMS_channel cat3=pdf_bincat3_bonly ] = 3.73905e-06
+RooSimultaneous::model_s[ indexCat=CMS_channel cat3=pdf_bincat3 ] = 22.4678
+RooProdPdf::nuisancePdf[ lumi_8TeV_Pdf * eff_trig_Pdf * global_syst_Pdf * id_eff_ee_Pdf * r9Eff_Pdf * vtxEff_Pdf * mShift_cat3_Pdf * mSmear_cat3_Pdf ] = 1
+RooProdPdf::pdf_bincat3[ lumi_8TeV_Pdf * eff_trig_Pdf * global_syst_Pdf * id_eff_ee_Pdf * r9Eff_Pdf * vtxEff_Pdf * mShift_cat3_Pdf * mSmear_cat3_Pdf * pdf_bincat3_nuis ] = 22.4678
+RooProdPdf::pdf_bincat3_bonly[ lumi_8TeV_Pdf * eff_trig_Pdf * global_syst_Pdf * id_eff_ee_Pdf * r9Eff_Pdf * vtxEff_Pdf * mShift_cat3_Pdf * mSmear_cat3_Pdf * pdf_bincat3_bonly_nuis ] = 3.73905e-06
+RooAddPdf::pdf_bincat3_bonly_nuis[ n_exp_bincat3_proc_bkg * shapeBkg_bkg_cat3 ] = 3.73905e-06
+RooAddPdf::pdf_bincat3_nuis[ n_exp_bincat3_proc_bkg * shapeBkg_bkg_cat3 + n_exp_final_bincat3_proc_sig * shapeSig_sig_cat3 ] = 22.4678
+RooGaussian::r9Eff_Pdf[ x=r9Eff mean=r9Eff_In sigma=1 ] = 1
+RooGenericPdf::shapeBkg_bkg_cat3[ actualVars=(PhotonsMass,par1ExpPAR_cat3,par2ExpPAR_cat3) formula="exp(-@1*@0)*pow(@0, @2)" ] = 3.73905e-06
+RooFFTConvPdf::shapeSig_sig_cat3[ SigModelBW_cat3(PhotonsMass) (*) ResAddPdf_cat3(PhotonsMass) ] = 1.3612e-05
+RooGaussian::vtxEff_Pdf[ x=vtxEff mean=vtxEff_In sigma=1 ] = 1
+
+functions
+--------
+RooFormulaVar::CBneg_alphaCB_cat3[ actualVars=(ReducedMass_sig_alphaCBneg_cat3) formula="@0" ] = 1.25204
+RooFormulaVar::CBneg_n_cat3[ actualVars=(ReducedMass_sig_Nneg_cat3) formula="@0" ] = 5.52844e-09
+RooFormulaVar::CBpos_alphaCB_cat3[ actualVars=(ReducedMass_sig_alphaCBpos_cat3) formula="@0" ] = -2.17447
+RooFormulaVar::CBpos_frac_cat3[ actualVars=(ReducedMass_sig_frac_cat3) formula="@0" ] = 0.993353
+RooFormulaVar::CBpos_mean_cat3[ actualVars=(ReducedMass_sig_mean_cat3) formula="@0" ] = -0.00999969
+RooFormulaVar::CBpos_n_cat3[ actualVars=(ReducedMass_sig_Npos_cat3) formula="@0" ] = 3.64451
+RooFormulaVar::CBpos_sigma_cat3[ actualVars=(ReducedMass_sig_sigma_cat3,MH,mSmear_cat3,rooSigmaCorr_cat3) formula="(sqrt(@0*@0*@3*@3+0.010000*0.010000*@2)*@1)" ] = 0.289101
+RooFormulaVar::meanBW_cat3[ actualVars=(MH) formula="@0" ] = 200
+ProcessNormalization::n_exp_bincat3_proc_sig[ thetaList=(lumi_8TeV,eff_trig,global_syst,id_eff_ee) asymmThetaList=(r9Eff,vtxEff) otherFactorList=(r) ] = 19620
+RooProduct::n_exp_final_bincat3_proc_sig[ n_exp_bincat3_proc_sig * shapeSig_sig_cat3__norm ] = 38.8538
+RooFormulaVar::par1ExpPAR_cat3[ actualVars=(PhotonsMass_bkg_8TeV_ExpPAR1_cat3) formula="@0" ] = 0.00430183
+RooFormulaVar::par2ExpPAR_cat3[ actualVars=(PhotonsMass_bkg_8TeV_ExpPAR2_cat3) formula="@0" ] = -2.1644
+RooHistFunc::shapeSig_sig_cat3__norm[ depList=(MH) ] = 0.00198032
+RooFormulaVar::sigmaBW_cat3[ actualVars=(sigmaBW_var_cat3) formula="@0" ] = 0.1
+
+datasets
+--------
+RooDataHist::data_obs(CMS_channel,PhotonsMass)
+
+named sets
+----------
+ModelConfig_GlobalObservables:(lumi_8TeV_In,eff_trig_In,global_syst_In,id_eff_ee_In,r9Eff_In,vtxEff_In,mShift_cat3_In,mSmear_cat3_In)
+ModelConfig_NuisParams:(lumi_8TeV,eff_trig,global_syst,id_eff_ee,r9Eff,vtxEff,mShift_cat3,mSmear_cat3)
+ModelConfig_Observables:(PhotonsMass,CMS_channel)
+ModelConfig_POI:(r)
+ModelConfig_bonly_GlobalObservables:(lumi_8TeV_In,eff_trig_In,global_syst_In,id_eff_ee_In,r9Eff_In,vtxEff_In,mShift_cat3_In,mSmear_cat3_In)
+ModelConfig_bonly_NuisParams:(lumi_8TeV,eff_trig,global_syst,id_eff_ee,r9Eff,vtxEff,mShift_cat3,mSmear_cat3)
+ModelConfig_bonly_Observables:(PhotonsMass,CMS_channel)
+ModelConfig_bonly_POI:(r)
+POI:(r)
+globalObservables:(lumi_8TeV_In,eff_trig_In,global_syst_In,id_eff_ee_In,r9Eff_In,vtxEff_In,mShift_cat3_In,mSmear_cat3_In)
+nuisances:(lumi_8TeV,eff_trig,global_syst,id_eff_ee,r9Eff,vtxEff,mShift_cat3,mSmear_cat3)
+observables:(PhotonsMass,CMS_channel)
+
+generic objects
+---------------
+RooStats::ModelConfig::ModelConfig
+RooStats::ModelConfig::ModelConfig_bonly
+RooArgSet::discreteParams
+
+embedded precalculated expensive components
+-------------------------------------------
+uid = 0 key=shapeSig_sig_cat3_SigModelBW_cat3_CONV_ResAddPdf_cat3_CACHEHIST_Obs[PhotonsMass]_BufFrac0.1_BufStrat0 value=RooDataHist::shapeSig_sig_cat3_SigModelBW_cat3_CONV_ResAddPdf_cat3_CACHEHIST_Obs[PhotonsMass]_BufFrac0.1_BufStrat0 parameters=( MH=200 ReducedMass_sig_Nneg_cat3=5.52844e-09 ReducedMass_sig_Npos_cat3=3.64451 ReducedMass_sig_alphaCBneg_cat3=1.25204 ReducedMass_sig_alphaCBpos_cat3=-2.17447 ReducedMass_sig_frac_cat3=0.993353 ReducedMass_sig_mean_cat3=-0.00999969 ReducedMass_sig_sigma_cat3=0.00152891 mSmear_cat3=0 rooSigmaCorr_cat3=0.945449 sigmaBW_var_cat3=0.1 )
+Setting variable 'MH' in workspace to the higgs mass 200
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooSimultaneousOpt::model_s_opt
+[#1] INFO:Caching -- RooExpensiveObjectCache::importCache() importing cache object shapeSig_sig_cat3_SigModelBW_cat3_CONV_ResAddPdf_cat3_CACHEHIST_Obs[PhotonsMass]_BufFrac0.1_BufStrat0 associated with object shapeSig_sig_cat3
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing RooUniform::prior
+Computing limit starting from observation
+Set default minimizer to Minuit2
+Will compute both limit(s) using minimizer Minuit2 with strategy 0 and tolerance 0.01
+[#1] INFO:Caching -- RooAbsCachedPdf::getCache(shapeSig_sig_cat3) creating new cache 0x260e840 with pdf SigModelBW_cat3_CONV_ResAddPdf_cat3_CACHE_Obs[PhotonsMass] for nset () with code 0 from preexisting content.
+[#1] INFO:Caching -- RooAbsCachedPdf::getCache(shapeSig_sig_cat3) creating new cache 0x29e2cb0 with pdf SigModelBW_cat3_CONV_ResAddPdf_cat3_CACHE_Obs[PhotonsMass] for nset (PhotonsMass) with code 1 from preexisting content.
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(shapeBkg_bkg_cat3_Int[PhotonsMass]) using numeric integrator RooIntegrator1D to calculate Int(PhotonsMass)
+[#1] INFO:Caching -- RooAbsCachedPdf::getCache(shapeSig_sig_cat3) creating new cache 0x2a279b0 with pdf SigModelBW_cat3_CONV_ResAddPdf_cat3_CACHE_Obs[PhotonsMass] for nset (PhotonsMass) with code 1 from preexisting content.
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 1
+MnSeedGenerator: for initial parameters FCN = 0
+MnSeedGenerator: Initial state:   - FCN =                0 Edm =  3.46771e-05 NCalls =     41
+VariableMetric: start iterating until Edm is < 1e-05
+VariableMetric: Initial state   - FCN =                0 Edm =  3.46771e-05 NCalls =     41
+VariableMetric: Iteration #   1 - FCN = -1.755903940648e-05 Edm =  3.18495e-07 NCalls =     67
+VariableMetric: After Hessian   - FCN = -1.755903940648e-05 Edm =  4.83894e-05 NCalls =    153
+Info in <Minuit2>: VariableMetricBuilder: Tolerance is not sufficient, continue the minimization
+Info in <Minuit2>: Current  Edm is : edm = 4.83894e-05
+Info in <Minuit2>: Required Edm is : edmval = 1e-05
+VariableMetric: Iteration #   3 - FCN = -6.271316669881e-05 Edm =  1.14453e-09 NCalls =    175
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -6.27131666988134384e-05
+Edm   = 1.14452793629952037e-09
+Nfcn  = 175
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00431052	 +/-  0.000946938	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -2.16216	 +/-  0.227078	(limited)
+eff_trig	  = -2.66454e-15	 +/-  0.996602	(limited)
+global_syst	  = -2.66454e-15	 +/-  0.996602	(limited)
+id_eff_ee	  = -2.66454e-15	 +/-  0.996602	(limited)
+lumi_8TeV	  = -2.66454e-15	 +/-  0.996602	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+r9Eff	  = -2.66454e-15	 +/-  0.996602	(limited)
+vtxEff	  = -2.66454e-15	 +/-  0.996602	(limited)
+Nuisance parameters after fit for asimov dataset: 
+  1) RooRealVar::   lumi_8TeV = -2.66454e-15 +/- 0.996602
+  2) RooRealVar::    eff_trig = -2.66454e-15 +/- 0.996602
+  3) RooRealVar:: global_syst = -2.66454e-15 +/- 0.996602
+  4) RooRealVar::   id_eff_ee = -2.66454e-15 +/- 0.996602
+  5) RooRealVar::       r9Eff = -2.66454e-15 +/- 0.996602
+  6) RooRealVar::      vtxEff = -2.66454e-15 +/- 0.996602
+  7) RooRealVar:: mShift_cat3 = -2.22045e-15 +/- 0.989616
+  8) RooRealVar:: mSmear_cat3 = -2.22045e-15 +/- 0.989616
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(shapeBkg_bkg_cat3_Int[PhotonsMass]) using numeric integrator RooIntegrator1D to calculate Int(PhotonsMass)
+[#1] INFO:Caching -- RooAbsCachedPdf::getCache(shapeSig_sig_cat3) creating new cache 0x32fc530 with pdf SigModelBW_cat3_CONV_ResAddPdf_cat3_CACHE_Obs[PhotonsMass] for nset (PhotonsMass) with code 1 from preexisting content.
+Global observables for data: 
+  1) RooRealVar::   lumi_8TeV_In = 0
+  2) RooRealVar::    eff_trig_In = 0
+  3) RooRealVar:: global_syst_In = 0
+  4) RooRealVar::   id_eff_ee_In = 0
+  5) RooRealVar::       r9Eff_In = 0
+  6) RooRealVar::      vtxEff_In = 0
+  7) RooRealVar:: mShift_cat3_In = 0
+  8) RooRealVar:: mSmear_cat3_In = 0
+Global observables for asimov: 
+  1) RooRealVar::   lumi_8TeV_In = -2.66454e-15
+  2) RooRealVar::    eff_trig_In = -2.66454e-15
+  3) RooRealVar:: global_syst_In = -2.66454e-15
+  4) RooRealVar::   id_eff_ee_In = -2.66454e-15
+  5) RooRealVar::       r9Eff_In = -2.66454e-15
+  6) RooRealVar::      vtxEff_In = -2.66454e-15
+  7) RooRealVar:: mShift_cat3_In = -2.22045e-15
+  8) RooRealVar:: mSmear_cat3_In = -2.22045e-15
+[#1] INFO:ObjectHandling -- RooWorkspace::import(w) importing dataset _Asymptotic_asimovDataset_
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(shapeBkg_bkg_cat3_Int[PhotonsMass]) using numeric integrator RooIntegrator1D to calculate Int(PhotonsMass)
+[#1] INFO:Caching -- RooAbsCachedPdf::getCache(shapeSig_sig_cat3) creating new cache 0x33965a0 with pdf SigModelBW_cat3_CONV_ResAddPdf_cat3_CACHE_Obs[PhotonsMass] for nset (PhotonsMass) with code 1 from preexisting content.
+Minuit2Minimizer: Minimize with max-calls 5500 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.036386581866957611
+Edm   = 8.19408663398475726e-06
+Nfcn  = 258
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00460524	 +/-  0.00262797	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -2.09693	 +/-  0.604738	(limited)
+eff_trig	  = 0.000103328	 +/-  1.93442	(limited)
+global_syst	  = 0.000506219	 +/-  1.9309	(limited)
+id_eff_ee	  = 0.000266904	 +/-  1.93372	(limited)
+lumi_8TeV	  = 0.000266904	 +/-  1.93372	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  1.88247	(limited)
+mSmear_cat3	  = -0.0113549	 +/-  0.0865236	(limited)
+r	  = 0.82432	 +/-  11.6835	(limited)
+r9Eff	  = 0.000283665	 +/-  1.93391	(limited)
+vtxEff	  = 2.60318e-05	 +/-  1.93459	(limited)
+Fit to asimov dataset:
+
+  RooFitResult: minimized FCN value: -0.0363866, estimated distance to minimum: 8.19409e-06
+                covariance matrix quality: Approximation only, not accurate
+                Status : MINIMIZE=0 
+
+    Constant Parameter    Value     
+  --------------------  ------------
+                    MH    2.0000e+02
+  ReducedMass_sig_Nneg_cat3    5.5284e-09
+  ReducedMass_sig_Npos_cat3    3.6445e+00
+  ReducedMass_sig_alphaCBneg_cat3    1.2520e+00
+  ReducedMass_sig_alphaCBpos_cat3   -2.1745e+00
+  ReducedMass_sig_frac_cat3    9.9335e-01
+  ReducedMass_sig_mean_cat3   -9.9997e-03
+  ReducedMass_sig_sigma_cat3    1.5289e-03
+           eff_trig_In   -2.6645e-15
+        global_syst_In   -2.6645e-15
+          id_eff_ee_In   -2.6645e-15
+          lumi_8TeV_In   -2.6645e-15
+        mShift_cat3_In   -2.2204e-15
+        mSmear_cat3_In   -2.2204e-15
+  n_exp_bincat3_proc_bkg    2.5865e+04
+              r9Eff_In   -2.6645e-15
+     rooSigmaCorr_cat3    9.4545e-01
+      sigmaBW_var_cat3    1.0000e-01
+             vtxEff_In   -2.6645e-15
+
+    Floating Parameter  InitialValue    FinalValue +/-  Error     GblCorr.
+  --------------------  ------------  --------------------------  --------
+  PhotonsMass_bkg_8TeV_ExpPAR1_cat3    4.3105e-03    4.6052e-03 +/-  2.63e-03  <none>
+  PhotonsMass_bkg_8TeV_ExpPAR2_cat3   -2.1622e+00   -2.0969e+00 +/-  6.05e-01  <none>
+              eff_trig   -2.6645e-15    1.0333e-04 +/-  1.93e+00  <none>
+           global_syst   -2.6645e-15    5.0622e-04 +/-  1.93e+00  <none>
+             id_eff_ee   -2.6645e-15    2.6690e-04 +/-  1.93e+00  <none>
+             lumi_8TeV   -2.6645e-15    2.6690e-04 +/-  1.93e+00  <none>
+           mShift_cat3   -2.2204e-15   -2.2204e-15 +/-  1.88e+00  <none>
+           mSmear_cat3   -2.2204e-15   -1.1355e-02 +/-  8.65e-02  <none>
+                     r    2.0000e-01    8.2432e-01 +/-  1.17e+01  <none>
+                 r9Eff   -2.6645e-15    2.8367e-04 +/-  1.93e+00  <none>
+                vtxEff   -2.6645e-15    2.6032e-05 +/-  1.93e+00  <none>
+
+WARNING: Best fit of asimov dataset is at r = 0.824320 (0.041216 times rMax), while it should be at zero
+Will search for NLL crossing by stepping.
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.00308048875429001992
+Edm   = 4.43047175013954316e-06
+Nfcn  = 157
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00466876	 +/-  0.000952885	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -2.08292	 +/-  0.227714	(limited)
+eff_trig	  = -0.00051393	 +/-  0.997668	(limited)
+global_syst	  = -0.00248539	 +/-  1.0198	(limited)
+id_eff_ee	  = -0.00132029	 +/-  1.00335	(limited)
+lumi_8TeV	  = -0.00132029	 +/-  1.00335	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114027	 +/-  0.0242345	(limited)
+r9Eff	  = -0.00137711	 +/-  1.00213	(limited)
+vtxEff	  = -0.000129971	 +/-  0.996621	(limited)
+At r = 1.000000:	delta(nll) = 0.00186
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0230726775209475279
+Edm   = 1.94151244535579799e-06
+Nfcn  = 163
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00484168	 +/-  0.000956096	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -2.0448	 +/-  0.227732	(limited)
+eff_trig	  = -0.00127099	 +/-  0.99672	(limited)
+global_syst	  = -0.00616697	 +/-  0.999669	(limited)
+id_eff_ee	  = -0.00327298	 +/-  0.997425	(limited)
+lumi_8TeV	  = -0.00327298	 +/-  0.997425	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113687	 +/-  0.0254753	(limited)
+r9Eff	  = -0.00334248	 +/-  0.990068	(limited)
+vtxEff	  = -0.000318953	 +/-  0.996208	(limited)
+At r = 1.500000:	delta(nll) = 0.02940
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.023234328452492771
+Edm   = 3.20097506615039357e-06
+Nfcn  = 157
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00501534	 +/-  0.000954008	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -2.00658	 +/-  0.227146	(limited)
+eff_trig	  = -0.00285142	 +/-  0.996563	(limited)
+global_syst	  = -0.0140339	 +/-  0.99549	(limited)
+id_eff_ee	  = -0.00736123	 +/-  0.996474	(limited)
+lumi_8TeV	  = -0.00736123	 +/-  0.996474	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113897	 +/-  0.0202441	(limited)
+r9Eff	  = -0.00768029	 +/-  0.981874	(limited)
+vtxEff	  = -0.00071529	 +/-  0.995671	(limited)
+At r = 2.000000:	delta(nll) = 0.08985
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0228485431944158608
+Edm   = 5.37086074840205777e-06
+Nfcn  = 161
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00518784	 +/-  0.000957332	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.96857	 +/-  0.22783	(limited)
+eff_trig	  = -0.00508291	 +/-  0.996875	(limited)
+global_syst	  = -0.0249399	 +/-  1.00321	(limited)
+id_eff_ee	  = -0.0131132	 +/-  0.998357	(limited)
+lumi_8TeV	  = -0.0131132	 +/-  0.998357	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113806	 +/-  0.0198976	(limited)
+r9Eff	  = -0.0134044	 +/-  0.976744	(limited)
+vtxEff	  = -0.00127369	 +/-  0.995215	(limited)
+At r = 2.500000:	delta(nll) = 0.18309
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0228320986191227135
+Edm   = 5.77639882494368052e-06
+Nfcn  = 164
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00535926	 +/-  0.000971536	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.93079	 +/-  0.230785	(limited)
+eff_trig	  = -0.00826836	 +/-  0.996009	(limited)
+global_syst	  = -0.0402292	 +/-  0.985592	(limited)
+id_eff_ee	  = -0.021284	 +/-  0.993108	(limited)
+lumi_8TeV	  = -0.021284	 +/-  0.993108	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113907	 +/-  0.01777	(limited)
+r9Eff	  = -0.0212785	 +/-  0.96211	(limited)
+vtxEff	  = -0.0020694	 +/-  0.99445	(limited)
+At r = 3.000000:	delta(nll) = 0.30896
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0229321198582952551
+Edm   = 1.17408904700613261e-06
+Nfcn  = 205
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00553283	 +/-  0.000974565	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.89246	 +/-  0.231752	(limited)
+eff_trig	  = -0.0121937	 +/-  0.995877	(limited)
+global_syst	  = -0.0597194	 +/-  0.985168	(limited)
+id_eff_ee	  = -0.0314446	 +/-  0.991914	(limited)
+lumi_8TeV	  = -0.0314446	 +/-  0.991914	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113896	 +/-  0.0150043	(limited)
+r9Eff	  = -0.0310212	 +/-  0.952491	(limited)
+vtxEff	  = -0.00304844	 +/-  0.993662	(limited)
+At r = 3.500000:	delta(nll) = 0.46724
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0224352762691107793
+Edm   = 5.12138081916797234e-06
+Nfcn  = 181
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00570205	 +/-  0.000954927	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.85519	 +/-  0.227242	(limited)
+eff_trig	  = -0.0164695	 +/-  0.995855	(limited)
+global_syst	  = -0.0803289	 +/-  0.986798	(limited)
+id_eff_ee	  = -0.0424276	 +/-  0.992525	(limited)
+lumi_8TeV	  = -0.0424276	 +/-  0.992525	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114231	 +/-  0.0142337	(limited)
+r9Eff	  = -0.0406538	 +/-  0.94122	(limited)
+vtxEff	  = -0.00410972	 +/-  0.99282	(limited)
+At r = 4.000000:	delta(nll) = 0.65768
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0226033852139090538
+Edm   = 1.17893608572155707e-06
+Nfcn  = 182
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00587312	 +/-  0.000974713	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.81747	 +/-  0.231936	(limited)
+eff_trig	  = -0.0212984	 +/-  0.995821	(limited)
+global_syst	  = -0.104734	 +/-  0.986239	(limited)
+id_eff_ee	  = -0.0549921	 +/-  0.992421	(limited)
+lumi_8TeV	  = -0.0549922	 +/-  0.99241	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113983	 +/-  0.0159993	(limited)
+r9Eff	  = -0.0517048	 +/-  0.92819	(limited)
+vtxEff	  = -0.00530661	 +/-  0.991801	(limited)
+At r = 4.500000:	delta(nll) = 0.87995
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0221413219509243968
+Edm   = 4.55944106923011061e-06
+Nfcn  = 189
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00604227	 +/-  0.000981261	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.78022	 +/-  0.232763	(limited)
+eff_trig	  = -0.0271589	 +/-  0.99556	(limited)
+global_syst	  = -0.132772	 +/-  0.975235	(limited)
+id_eff_ee	  = -0.0699982	 +/-  0.989734	(limited)
+lumi_8TeV	  = -0.0699979	 +/-  0.989721	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114172	 +/-  0.011468	(limited)
+r9Eff	  = -0.0637831	 +/-  0.913887	(limited)
+vtxEff	  = -0.00675219	 +/-  0.990845	(limited)
+At r = 5.000000:	delta(nll) = 1.13372
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0215590260108185217
+Edm   = 2.71903271281940761e-06
+Nfcn  = 160
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00620891	 +/-  0.000988863	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.74346	 +/-  0.234461	(limited)
+eff_trig	  = -0.0334329	 +/-  0.990253	(limited)
+global_syst	  = -0.160004	 +/-  0.964212	(limited)
+id_eff_ee	  = -0.0856802	 +/-  0.977454	(limited)
+lumi_8TeV	  = -0.0856929	 +/-  0.977138	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114156	 +/-  0.0145246	(limited)
+r9Eff	  = -0.0752563	 +/-  0.902869	(limited)
+vtxEff	  = -0.00829639	 +/-  0.989186	(limited)
+At r = 5.500000:	delta(nll) = 1.41858
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0217978779470061473
+Edm   = 2.42948317470882633e-06
+Nfcn  = 157
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00637452	 +/-  0.000992285	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.70697	 +/-  0.235148	(limited)
+eff_trig	  = -0.0400643	 +/-  0.990272	(limited)
+global_syst	  = -0.192572	 +/-  0.96471	(limited)
+id_eff_ee	  = -0.102787	 +/-  0.97642	(limited)
+lumi_8TeV	  = -0.102787	 +/-  0.976432	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114177	 +/-  0.0139461	(limited)
+r9Eff	  = -0.0877942	 +/-  0.890621	(limited)
+vtxEff	  = -0.00991595	 +/-  0.987999	(limited)
+At r = 6.000000:	delta(nll) = 1.73412
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.00544723998831577426
+Edm   = 3.81069963422369295e-08
+Nfcn  = 136
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00645707	 +/-  0.000992188	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.68879	 +/-  0.235737	(limited)
+eff_trig	  = -0.0431297	 +/-  0.994864	(limited)
+global_syst	  = -0.210886	 +/-  0.985574	(limited)
+id_eff_ee	  = -0.110957	 +/-  0.990313	(limited)
+lumi_8TeV	  = -0.110958	 +/-  0.99032	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113972	 +/-  0.0144241	(limited)
+r9Eff	  = -0.0940378	 +/-  0.892145	(limited)
+vtxEff	  = -0.0106629	 +/-  0.988135	(limited)
+At r = 6.250000:	delta(nll) = 1.90325
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.00134463251295043875
+Edm   = 7.82336833290441883e-08
+Nfcn  = 138
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00649776	 +/-  0.00098881	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.67982	 +/-  0.235242	(limited)
+eff_trig	  = -0.0449043	 +/-  0.994924	(limited)
+global_syst	  = -0.21976	 +/-  0.985432	(limited)
+id_eff_ee	  = -0.115655	 +/-  0.99018	(limited)
+lumi_8TeV	  = -0.115652	 +/-  0.990131	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113977	 +/-  0.0143486	(limited)
+r9Eff	  = -0.097372	 +/-  0.892782	(limited)
+vtxEff	  = -0.0110924	 +/-  0.988086	(limited)
+At r = 6.375000:	delta(nll) = 1.99063
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.000141601248272007541
+Edm   = 1.54436149247782468e-06
+Nfcn  = 89
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00649678	 +/-  0.000100589	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.67969	 +/-  0.0268428	(limited)
+eff_trig	  = -0.0433954	 +/-  0.994666	(limited)
+global_syst	  = -0.212909	 +/-  0.973401	(limited)
+id_eff_ee	  = -0.111968	 +/-  0.986014	(limited)
+lumi_8TeV	  = -0.111969	 +/-  0.986059	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114017	 +/-  0.0144335	(limited)
+r9Eff	  = -0.0948456	 +/-  0.89653	(limited)
+vtxEff	  = -0.010723	 +/-  0.988631	(limited)
+At r = 6.312500:	delta(nll) = 1.94689
+Median for expected limits: 6.28125
+Sigma  for expected limits: 3.20478
+Will search for NLL crossing by bisection
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.908958614242543095
+Edm   = 9.96331400418167326e-07
+Nfcn  = 179
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00541069	 +/-  0.000954671	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.91941	 +/-  0.228609	(limited)
+eff_trig	  = -0.00941608	 +/-  0.996456	(limited)
+global_syst	  = -0.046413	 +/-  0.994836	(limited)
+id_eff_ee	  = -0.0243123	 +/-  0.995799	(limited)
+lumi_8TeV	  = -0.02432	 +/-  0.995712	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113473	 +/-  0.0206264	(limited)
+r9Eff	  = -0.0252279	 +/-  0.976762	(limited)
+vtxEff	  = -0.00234838	 +/-  0.99823	(limited)
+At r = 3.140625:	delta(nll) = 0.35021
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.218026023822897208
+Edm   = 1.77800179799985423e-06
+Nfcn  = 168
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00594419	 +/-  0.00097461	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.80186	 +/-  0.232049	(limited)
+eff_trig	  = -0.0239778	 +/-  0.995455	(limited)
+global_syst	  = -0.114794	 +/-  0.984601	(limited)
+id_eff_ee	  = -0.0614343	 +/-  0.990648	(limited)
+lumi_8TeV	  = -0.0614476	 +/-  0.990695	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113487	 +/-  0.00645542	(limited)
+r9Eff	  = -0.0560827	 +/-  0.912079	(limited)
+vtxEff	  = -0.00595839	 +/-  0.989761	(limited)
+At r = 4.710938:	delta(nll) = 0.98319
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0547592078177675592
+Edm   = 1.85559467138765999e-06
+Nfcn  = 157
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00567843	 +/-  0.000967558	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.86038	 +/-  0.233155	(limited)
+eff_trig	  = -0.0155849	 +/-  0.995811	(limited)
+global_syst	  = -0.0780897	 +/-  0.987517	(limited)
+id_eff_ee	  = -0.0404287	 +/-  0.993369	(limited)
+lumi_8TeV	  = -0.0404323	 +/-  0.99337	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113888	 +/-  0.0177826	(limited)
+r9Eff	  = -0.0380191	 +/-  0.954486	(limited)
+vtxEff	  = -0.00387701	 +/-  0.994686	(limited)
+At r = 3.925781:	delta(nll) = 0.62739
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0137096420190272548
+Edm   = 1.67483393161327365e-07
+Nfcn  = 135
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00554482	 +/-  0.000968784	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.88985	 +/-  0.232375	(limited)
+eff_trig	  = -0.0124438	 +/-  0.996105	(limited)
+global_syst	  = -0.0607601	 +/-  0.990903	(limited)
+id_eff_ee	  = -0.0320853	 +/-  0.994016	(limited)
+lumi_8TeV	  = -0.0320865	 +/-  0.994029	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113634	 +/-  0.0191258	(limited)
+r9Eff	  = -0.0315297	 +/-  0.961513	(limited)
+vtxEff	  = -0.00311039	 +/-  0.994532	(limited)
+At r = 3.533203:	delta(nll) = 0.47890
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.00339918468096032369
+Edm   = 3.05104822502674934e-09
+Nfcn  = 136
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00561151	 +/-  0.000973361	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.87515	 +/-  0.232052	(limited)
+eff_trig	  = -0.0140253	 +/-  0.996013	(limited)
+global_syst	  = -0.0688767	 +/-  0.99266	(limited)
+id_eff_ee	  = -0.0361805	 +/-  0.994281	(limited)
+lumi_8TeV	  = -0.0361807	 +/-  0.994278	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113663	 +/-  0.0186213	(limited)
+r9Eff	  = -0.0352994	 +/-  0.952961	(limited)
+vtxEff	  = -0.00350357	 +/-  0.99373	(limited)
+At r = 3.729492:	delta(nll) = 0.55067
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.000855760583031940441
+Edm   = 2.89495918045410788e-06
+Nfcn  = 117
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00564318	 +/-  0.000972199	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.86821	 +/-  0.232018	(limited)
+eff_trig	  = -0.0143022	 +/-  0.995699	(limited)
+global_syst	  = -0.0748905	 +/-  0.988961	(limited)
+id_eff_ee	  = -0.0375432	 +/-  0.992926	(limited)
+lumi_8TeV	  = -0.0375576	 +/-  0.992909	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113687	 +/-  0.0183912	(limited)
+r9Eff	  = -0.0366705	 +/-  0.95144	(limited)
+vtxEff	  = -0.00353424	 +/-  0.993593	(limited)
+At r = 3.827637:	delta(nll) = 0.58842
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -8.30947755286236478e-05
+Edm   = 3.31259354793801217e-06
+Nfcn  = 67
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00564242	 +/-  0.000101151	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.86805	 +/-  0.0231524	(limited)
+eff_trig	  = -0.0142232	 +/-  0.996331	(limited)
+global_syst	  = -0.0720706	 +/-  0.996454	(limited)
+id_eff_ee	  = -0.0370044	 +/-  0.994552	(limited)
+lumi_8TeV	  = -0.0370114	 +/-  0.994528	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113705	 +/-  0.0185221	(limited)
+r9Eff	  = -0.0361088	 +/-  0.956315	(limited)
+vtxEff	  = -0.00353451	 +/-  0.994031	(limited)
+At r = 3.778564:	delta(nll) = 0.56950
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -2.26573843171663241e-05
+Edm   = 3.83769401168440103e-06
+Nfcn  = 63
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00564198	 +/-  0.000106555	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.86799	 +/-  0.0222319	(limited)
+eff_trig	  = -0.0140345	 +/-  0.996307	(limited)
+global_syst	  = -0.0698234	 +/-  1.00814	(limited)
+id_eff_ee	  = -0.0363372	 +/-  0.995612	(limited)
+lumi_8TeV	  = -0.0363401	 +/-  0.995632	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113717	 +/-  0.0185731	(limited)
+r9Eff	  = -0.0354665	 +/-  0.957857	(limited)
+vtxEff	  = -0.00349827	 +/-  0.993976	(limited)
+At r = 3.754028:	delta(nll) = 0.56026
+Will search for NLL crossing by bisection
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.133056036837296193
+Edm   = 2.49414265263227336e-06
+Nfcn  = 182
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00604764	 +/-  0.0010036	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.77907	 +/-  0.237557	(limited)
+eff_trig	  = -0.0271436	 +/-  0.995279	(limited)
+global_syst	  = -0.132741	 +/-  0.979563	(limited)
+id_eff_ee	  = -0.0699787	 +/-  0.988917	(limited)
+lumi_8TeV	  = -0.0699778	 +/-  0.988865	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113825	 +/-  0.0134981	(limited)
+r9Eff	  = -0.0635767	 +/-  0.900112	(limited)
+vtxEff	  = -0.00674642	 +/-  0.989496	(limited)
+At r = 5.023773:	delta(nll) = 1.14656
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0344484798064297673
+Edm   = 9.09631532703794672e-07
+Nfcn  = 138
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00583859	 +/-  0.000970414	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.82511	 +/-  0.233232	(limited)
+eff_trig	  = -0.0202283	 +/-  0.995989	(limited)
+global_syst	  = -0.0994021	 +/-  0.98985	(limited)
+id_eff_ee	  = -0.0522921	 +/-  0.993218	(limited)
+lumi_8TeV	  = -0.052288	 +/-  0.993299	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113756	 +/-  0.0172588	(limited)
+r9Eff	  = -0.0485726	 +/-  0.94241	(limited)
+vtxEff	  = -0.00503486	 +/-  0.993757	(limited)
+At r = 4.395035:	delta(nll) = 0.83067
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0085840032887516942
+Edm   = 1.54797566782658835e-07
+Nfcn  = 135
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00594389	 +/-  0.000982262	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.8019	 +/-  0.233642	(limited)
+eff_trig	  = -0.0234398	 +/-  0.995414	(limited)
+global_syst	  = -0.115782	 +/-  0.989145	(limited)
+id_eff_ee	  = -0.0605121	 +/-  0.992458	(limited)
+lumi_8TeV	  = -0.0605132	 +/-  0.99242	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.011379	 +/-  0.0165914	(limited)
+r9Eff	  = -0.0563185	 +/-  0.926654	(limited)
+vtxEff	  = -0.0058345	 +/-  0.991689	(limited)
+At r = 4.709404:	delta(nll) = 0.98242
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.00217286087673135286
+Edm   = 3.49773262546887791e-08
+Nfcn  = 135
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00599692	 +/-  0.00097946	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.79021	 +/-  0.233344	(limited)
+eff_trig	  = -0.0252303	 +/-  0.995588	(limited)
+global_syst	  = -0.124158	 +/-  0.989751	(limited)
+id_eff_ee	  = -0.0651162	 +/-  0.992502	(limited)
+lumi_8TeV	  = -0.0651168	 +/-  0.992464	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113809	 +/-  0.0163453	(limited)
+r9Eff	  = -0.0599407	 +/-  0.926556	(limited)
+vtxEff	  = -0.00627674	 +/-  0.991602	(limited)
+At r = 4.866589:	delta(nll) = 1.06295
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.000213178998068932633
+Edm   = 3.10000996087241608e-06
+Nfcn  = 89
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00599559	 +/-  0.000104589	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.79004	 +/-  0.0278575	(limited)
+eff_trig	  = -0.0238155	 +/-  0.995603	(limited)
+global_syst	  = -0.116752	 +/-  0.981425	(limited)
+id_eff_ee	  = -0.0614344	 +/-  0.990025	(limited)
+lumi_8TeV	  = -0.0614341	 +/-  0.989956	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.011386	 +/-  0.0164993	(limited)
+r9Eff	  = -0.0569487	 +/-  0.931241	(limited)
+vtxEff	  = -0.00592754	 +/-  0.992125	(limited)
+At r = 4.787996:	delta(nll) = 1.02263
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.000797374547152019221
+Edm   = 9.81670617354024504e-07
+Nfcn  = 110
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00595738	 +/-  0.00097532	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.79893	 +/-  0.233146	(limited)
+eff_trig	  = -0.024307	 +/-  0.995668	(limited)
+global_syst	  = -0.116697	 +/-  0.987281	(limited)
+id_eff_ee	  = -0.062365	 +/-  0.991679	(limited)
+lumi_8TeV	  = -0.0623487	 +/-  0.991639	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113786	 +/-  0.0165488	(limited)
+r9Eff	  = -0.0578664	 +/-  0.933166	(limited)
+vtxEff	  = -0.00605339	 +/-  0.992257	(limited)
+At r = 4.748700:	delta(nll) = 1.00226
+Will search for NLL crossing by bisection
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -1.91807905556173397
+Edm   = 2.04857615982546218e-06
+Nfcn  = 200
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00748505	 +/-  0.00107058	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.46223	 +/-  0.243143	(limited)
+eff_trig	  = -0.099605	 +/-  0.993481	(limited)
+global_syst	  = -0.490213	 +/-  0.948154	(limited)
+id_eff_ee	  = -0.256715	 +/-  0.976898	(limited)
+lumi_8TeV	  = -0.256714	 +/-  0.976902	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.011416	 +/-  0.0108443	(limited)
+r9Eff	  = -0.180773	 +/-  0.965165	(limited)
+vtxEff	  = -0.0240931	 +/-  0.965445	(limited)
+At r = 9.486028:	delta(nll) = 4.74532
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.214207151366619886
+Edm   = 6.01915918786698521e-08
+Nfcn  = 177
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00698573	 +/-  0.00100165	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.57226	 +/-  0.238201	(limited)
+eff_trig	  = -0.0691273	 +/-  0.994657	(limited)
+global_syst	  = -0.339288	 +/-  0.974417	(limited)
+id_eff_ee	  = -0.178318	 +/-  0.984202	(limited)
+lumi_8TeV	  = -0.178318	 +/-  0.984202	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114124	 +/-  0.0131672	(limited)
+r9Eff	  = -0.137451	 +/-  0.90684	(limited)
+vtxEff	  = -0.016924	 +/-  0.987827	(limited)
+At r = 7.883639:	delta(nll) = 3.19009
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0541547262119326106
+Edm   = 5.12067011943379361e-07
+Nfcn  = 156
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00723732	 +/-  0.000995766	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.51681	 +/-  0.236192	(limited)
+eff_trig	  = -0.0839752	 +/-  0.993928	(limited)
+global_syst	  = -0.411165	 +/-  0.97786	(limited)
+id_eff_ee	  = -0.216429	 +/-  0.982876	(limited)
+lumi_8TeV	  = -0.216431	 +/-  0.982908	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114191	 +/-  0.0123441	(limited)
+r9Eff	  = -0.159186	 +/-  0.838628	(limited)
+vtxEff	  = -0.0204474	 +/-  0.979388	(limited)
+At r = 8.684834:	delta(nll) = 3.93262
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0133315041882639158
+Edm   = 5.0067480906155935e-06
+Nfcn  = 135
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.0071134	 +/-  0.00099936	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.54414	 +/-  0.238462	(limited)
+eff_trig	  = -0.0767494	 +/-  0.994319	(limited)
+global_syst	  = -0.374611	 +/-  0.976157	(limited)
+id_eff_ee	  = -0.198788	 +/-  0.98292	(limited)
+lumi_8TeV	  = -0.198788	 +/-  0.982919	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114164	 +/-  0.0127287	(limited)
+r9Eff	  = -0.1474	 +/-  0.878071	(limited)
+vtxEff	  = -0.0187106	 +/-  0.983431	(limited)
+At r = 8.284237:	delta(nll) = 3.55243
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.00321082787906059545
+Edm   = 3.13361473818038524e-06
+Nfcn  = 134
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00717656	 +/-  0.00100812	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.53019	 +/-  0.239114	(limited)
+eff_trig	  = -0.0798434	 +/-  0.994056	(limited)
+global_syst	  = -0.394236	 +/-  0.977971	(limited)
+id_eff_ee	  = -0.205582	 +/-  0.98224	(limited)
+lumi_8TeV	  = -0.205583	 +/-  0.982277	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114183	 +/-  0.0125337	(limited)
+r9Eff	  = -0.153096	 +/-  0.857091	(limited)
+vtxEff	  = -0.0194757	 +/-  0.981498	(limited)
+At r = 8.484535:	delta(nll) = 3.74031
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.000417181002081323316
+Edm   = 3.44905846196716564e-06
+Nfcn  = 88
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00717505	 +/-  9.93459e-05	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.52999	 +/-  0.0264634	(limited)
+eff_trig	  = -0.0773394	 +/-  0.993685	(limited)
+global_syst	  = -0.379543	 +/-  0.963511	(limited)
+id_eff_ee	  = -0.199547	 +/-  0.97942	(limited)
+lumi_8TeV	  = -0.199547	 +/-  0.979523	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114238	 +/-  0.0126279	(limited)
+r9Eff	  = -0.149528	 +/-  0.867649	(limited)
+vtxEff	  = -0.0188752	 +/-  0.982638	(limited)
+At r = 8.384386:	delta(nll) = 3.64629
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.000103658196773096558
+Edm   = 9.08840968539643362e-07
+Nfcn  = 84
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00717544	 +/-  0.000110286	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.53016	 +/-  0.0234495	(limited)
+eff_trig	  = -0.0788699	 +/-  0.993816	(limited)
+global_syst	  = -0.386539	 +/-  0.964115	(limited)
+id_eff_ee	  = -0.203427	 +/-  0.980402	(limited)
+lumi_8TeV	  = -0.203427	 +/-  0.980436	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114206	 +/-  0.012571	(limited)
+r9Eff	  = -0.151773	 +/-  0.863127	(limited)
+vtxEff	  = -0.0192395	 +/-  0.982246	(limited)
+At r = 8.434461:	delta(nll) = 3.69305
+Will search for NLL crossing by bisection
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -2.35164642351403952
+Edm   = 5.71645190401292641e-07
+Nfcn  = 244
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00872608	 +/-  0.00101575	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.18858	 +/-  0.239078	(limited)
+eff_trig	  = -0.201191	 +/-  0.99017	(limited)
+global_syst	  = -0.983154	 +/-  0.956431	(limited)
+id_eff_ee	  = -0.516688	 +/-  0.968513	(limited)
+lumi_8TeV	  = -0.516683	 +/-  0.968511	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114486	 +/-  0.00799677	(limited)
+r9Eff	  = -0.336644	 +/-  1.04688	(limited)
+vtxEff	  = -0.0469364	 +/-  0.941902	(limited)
+At r = 13.779931:	delta(nll) = 10.18884
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.56281665556630156
+Edm   = 9.15937581092890101e-08
+Nfcn  = 200
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00797624	 +/-  0.00100691	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.35391	 +/-  0.243106	(limited)
+eff_trig	  = -0.135335	 +/-  0.993551	(limited)
+global_syst	  = -0.66336	 +/-  0.965734	(limited)
+id_eff_ee	  = -0.348987	 +/-  0.983878	(limited)
+lumi_8TeV	  = -0.348986	 +/-  0.983839	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114366	 +/-  0.0113711	(limited)
+r9Eff	  = -0.230107	 +/-  0.904016	(limited)
+vtxEff	  = -0.0323704	 +/-  0.981011	(limited)
+At r = 11.119714:	delta(nll) = 6.60940
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.145016749423962921
+Edm   = 4.08287305268433018e-06
+Nfcn  = 156
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.0075813	 +/-  0.00100062	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.44096	 +/-  0.239368	(limited)
+eff_trig	  = -0.105835	 +/-  0.993219	(limited)
+global_syst	  = -0.518805	 +/-  0.964906	(limited)
+id_eff_ee	  = -0.273414	 +/-  0.980796	(limited)
+lumi_8TeV	  = -0.273414	 +/-  0.980796	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114287	 +/-  0.0118849	(limited)
+r9Eff	  = -0.190633	 +/-  0.903671	(limited)
+vtxEff	  = -0.0255465	 +/-  0.981221	(limited)
+At r = 9.789606:	delta(nll) = 5.07108
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0360822145154372081
+Edm   = 1.28092328706836903e-07
+Nfcn  = 154
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00777893	 +/-  0.00102504	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.3974	 +/-  0.241819	(limited)
+eff_trig	  = -0.120417	 +/-  0.99322	(limited)
+global_syst	  = -0.590535	 +/-  0.97219	(limited)
+id_eff_ee	  = -0.310425	 +/-  0.980079	(limited)
+lumi_8TeV	  = -0.310426	 +/-  0.980084	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114325	 +/-  0.0113515	(limited)
+r9Eff	  = -0.209504	 +/-  0.84507	(limited)
+vtxEff	  = -0.0289415	 +/-  0.973008	(limited)
+At r = 10.454660:	delta(nll) = 5.81800
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.00910621998143263528
+Edm   = 2.79826005377418282e-06
+Nfcn  = 135
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00787821	 +/-  0.00102671	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.37555	 +/-  0.242691	(limited)
+eff_trig	  = -0.129299	 +/-  0.991697	(limited)
+global_syst	  = -0.626503	 +/-  0.967623	(limited)
+id_eff_ee	  = -0.329285	 +/-  0.980221	(limited)
+lumi_8TeV	  = -0.329266	 +/-  0.980166	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114333	 +/-  0.0112243	(limited)
+r9Eff	  = -0.218715	 +/-  0.865712	(limited)
+vtxEff	  = -0.0310393	 +/-  0.972748	(limited)
+At r = 10.787187:	delta(nll) = 6.20824
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.00222380751319110241
+Edm   = 1.09147366076816508e-06
+Nfcn  = 135
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00792718	 +/-  0.00102669	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.36473	 +/-  0.242986	(limited)
+eff_trig	  = -0.132714	 +/-  0.99067	(limited)
+global_syst	  = -0.645026	 +/-  0.966531	(limited)
+id_eff_ee	  = -0.338894	 +/-  0.979962	(limited)
+lumi_8TeV	  = -0.33888	 +/-  0.979874	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114345	 +/-  0.0111669	(limited)
+r9Eff	  = -0.224396	 +/-  0.876603	(limited)
+vtxEff	  = -0.0318131	 +/-  0.972574	(limited)
+At r = 10.953450:	delta(nll) = 6.40746
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.000300301782320754724
+Edm   = 1.89935687576728048e-06
+Nfcn  = 89
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00792826	 +/-  9.91999e-05	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.36486	 +/-  0.0262479	(limited)
+eff_trig	  = -0.134222	 +/-  0.992778	(limited)
+global_syst	  = -0.657581	 +/-  0.939382	(limited)
+id_eff_ee	  = -0.346157	 +/-  0.968843	(limited)
+lumi_8TeV	  = -0.346157	 +/-  0.968843	(limited)
+mShift_cat3	  = -2.22045e-15	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114312	 +/-  0.0111343	(limited)
+r9Eff	  = -0.228546	 +/-  0.880661	(limited)
+vtxEff	  = -0.032102	 +/-  0.972482	(limited)
+At r = 11.036582:	delta(nll) = 6.50836
+Restricting r to positive values.
+  1) RooRealVar::                                MH = 200
+  2) RooRealVar:: PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00430183 +/- 0.000956841
+  3) RooRealVar:: PhotonsMass_bkg_8TeV_ExpPAR2_cat3 = -2.1644 +/- 0.229571
+  4) RooRealVar::         ReducedMass_sig_Nneg_cat3 = 5.52844e-09 +/- 14.3291
+  5) RooRealVar::         ReducedMass_sig_Npos_cat3 = 3.64451 +/- 11.6582
+  6) RooRealVar::   ReducedMass_sig_alphaCBneg_cat3 = 1.25204 +/- 14.7335
+  7) RooRealVar::   ReducedMass_sig_alphaCBpos_cat3 = -2.17447 +/- 4.37058
+  8) RooRealVar::         ReducedMass_sig_frac_cat3 = 0.993353 +/- 0.350856
+  9) RooRealVar::         ReducedMass_sig_mean_cat3 = -0.00999969 +/- 0.0295077
+ 10) RooRealVar::        ReducedMass_sig_sigma_cat3 = 0.00152891 +/- 4.6838
+ 11) RooRealVar::                          eff_trig = 0
+ 12) RooRealVar::                       eff_trig_In = 0
+ 13) RooRealVar::                       global_syst = 0
+ 14) RooRealVar::                    global_syst_In = 0
+ 15) RooRealVar::                         id_eff_ee = 0
+ 16) RooRealVar::                      id_eff_ee_In = 0
+ 17) RooRealVar::                         lumi_8TeV = 0
+ 18) RooRealVar::                      lumi_8TeV_In = 0
+ 19) RooRealVar::                       mShift_cat3 = 0
+ 20) RooRealVar::                    mShift_cat3_In = 0
+ 21) RooRealVar::                       mSmear_cat3 = 0
+ 22) RooRealVar::                    mSmear_cat3_In = 0
+ 23) RooRealVar::            n_exp_bincat3_proc_bkg = 25865
+ 24) RooRealVar::                                 r = 2
+ 25) RooRealVar::                             r9Eff = 0
+ 26) RooRealVar::                          r9Eff_In = 0
+ 27) RooRealVar::                 rooSigmaCorr_cat3 = 0.945449
+ 28) RooRealVar::                  sigmaBW_var_cat3 = 0.1
+ 29) RooRealVar::                            vtxEff = 0
+ 30) RooRealVar::                         vtxEff_In = 0
+
+Make global fit of real data
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(shapeBkg_bkg_cat3_Int[PhotonsMass]) using numeric integrator RooIntegrator1D to calculate Int(PhotonsMass)
+[#1] INFO:Caching -- RooAbsCachedPdf::getCache(shapeSig_sig_cat3) creating new cache 0x38fac10 with pdf SigModelBW_cat3_CONV_ResAddPdf_cat3_CACHE_Obs[PhotonsMass] for nset (PhotonsMass) with code 1 from preexisting content.
+Minuit2Minimizer: Minimize with max-calls 5500 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.870408402494878608
+Edm   = 3.2352723026560777e-07
+Nfcn  = 293
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00593768	 +/-  0.00146426	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.8038	 +/-  0.332905	(limited)
+eff_trig	  = 7.95508e-06	 +/-  0.996831	(limited)
+global_syst	  = -1.09659e-05	 +/-  0.996938	(limited)
+id_eff_ee	  = 1.38535e-05	 +/-  0.996507	(limited)
+lumi_8TeV	  = 1.38535e-05	 +/-  0.996507	(limited)
+mShift_cat3	  = 0	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0105138	 +/-  0.0164415	(limited)
+r	  = 4.58916	 +/-  2.76295	(limited)
+r9Eff	  = -3.99999e-05	 +/-  0.995056	(limited)
+vtxEff	  = 1.6468e-06	 +/-  0.996547	(limited)
+NLL at global minimum of data: -104558 (r = 4.58916)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00593768
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =   -1.8038
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = 7.95508e-06
+  11) eff_trig_In                    =         0
+  12) global_syst                    = -1.09659e-05
+  13) global_syst_In                 =         0
+  14) id_eff_ee                      = 1.38535e-05
+  15) id_eff_ee_In                   =         0
+  16) lumi_8TeV                      = 1.38535e-05
+  17) lumi_8TeV_In                   =         0
+  18) mShift_cat3                    =         0
+  19) mShift_cat3_In                 =         0
+  20) mSmear_cat3                    = -0.0105138
+  21) mSmear_cat3_In                 =         0
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   4.58916
+  24) r9Eff                          = -3.99999e-05
+  25) r9Eff_In                       =         0
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = 1.6468e-06
+  29) vtxEff_In                      =         0
+
+
+Make global fit of asimov data
+[#1] INFO:NumericIntegration -- RooRealIntegral::init(shapeBkg_bkg_cat3_Int[PhotonsMass]) using numeric integrator RooIntegrator1D to calculate Int(PhotonsMass)
+[#1] INFO:Caching -- RooAbsCachedPdf::getCache(shapeSig_sig_cat3) creating new cache 0x3d80dd0 with pdf SigModelBW_cat3_CONV_ResAddPdf_cat3_CACHE_Obs[PhotonsMass] for nset (PhotonsMass) with code 1
+Minuit2Minimizer: Minimize with max-calls 5500 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.936918736972080057
+Edm   = 9.51783681282648782e-07
+Nfcn  = 456
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00460979	 +/-  0.00137078	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -2.09591	 +/-  0.315163	(limited)
+eff_trig	  = 2.90314e-06	 +/-  0.99606	(limited)
+global_syst	  = 0.000423706	 +/-  0.992325	(limited)
+id_eff_ee	  = 5.97565e-05	 +/-  0.992918	(limited)
+lumi_8TeV	  = 5.97565e-05	 +/-  0.992918	(limited)
+mShift_cat3	  = 2.30926e-14	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0113695	 +/-  0.019178	(limited)
+r	  = 0.830222	 +/-  2.68434	(limited)
+r9Eff	  = 0.000147049	 +/-  0.981608	(limited)
+vtxEff	  = 8.65033e-06	 +/-  0.9925	(limited)
+NLL at global minimum of asimov: -104556 (r = 0.830222)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00460979
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -2.09591
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = 2.90314e-06
+  11) eff_trig_In                    = -2.66454e-15
+  12) global_syst                    = 0.000423706
+  13) global_syst_In                 = -2.66454e-15
+  14) id_eff_ee                      = 5.97565e-05
+  15) id_eff_ee_In                   = -2.66454e-15
+  16) lumi_8TeV                      = 5.97565e-05
+  17) lumi_8TeV_In                   = -2.66454e-15
+  18) mShift_cat3                    = 2.30926e-14
+  19) mShift_cat3_In                 = -2.22045e-15
+  20) mSmear_cat3                    = -0.0113695
+  21) mSmear_cat3_In                 = -2.22045e-15
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =  0.830222
+  24) r9Eff                          = 0.000147049
+  25) r9Eff_In                       = -2.66454e-15
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = 8.65033e-06
+  29) vtxEff_In                      = -2.66454e-15
+
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -5.92037798371538937
+Edm   = 6.695211902992084e-06
+Nfcn  = 241
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00864354	 +/-  0.00107732	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.20784	 +/-  0.252568	(limited)
+eff_trig	  = -0.124445	 +/-  0.990874	(limited)
+global_syst	  = -0.607095	 +/-  0.947865	(limited)
+id_eff_ee	  = -0.320886	 +/-  0.967225	(limited)
+lumi_8TeV	  = -0.320886	 +/-  0.967225	(limited)
+mShift_cat3	  = 0	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0106369	 +/-  0.00991855	(limited)
+r9Eff	  = -0.21499	 +/-  0.963957	(limited)
+vtxEff	  = -0.0298553	 +/-  0.944494	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00864354
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.20784
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.124445
+  11) eff_trig_In                    =         0
+  12) global_syst                    = -0.607095
+  13) global_syst_In                 =         0
+  14) id_eff_ee                      = -0.320886
+  15) id_eff_ee_In                   =         0
+  16) lumi_8TeV                      = -0.320886
+  17) lumi_8TeV_In                   =         0
+  18) mShift_cat3                    =         0
+  19) mShift_cat3_In                 =         0
+  20) mSmear_cat3                    = -0.0106369
+  21) mSmear_cat3_In                 =         0
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =    12.878
+  24) r9Eff                          =  -0.21499
+  25) r9Eff_In                       =         0
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0298553
+  29) vtxEff_In                      =         0
+
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -12.1399032977225598
+Edm   = 4.0773276506886463e-06
+Nfcn  = 265
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00848013	 +/-  0.0010196	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.24282	 +/-  0.24057	(limited)
+eff_trig	  = -0.177299	 +/-  0.991192	(limited)
+global_syst	  = -0.869893	 +/-  0.964121	(limited)
+id_eff_ee	  = -0.457894	 +/-  0.966347	(limited)
+lumi_8TeV	  = -0.457894	 +/-  0.966347	(limited)
+mShift_cat3	  = 2.30926e-14	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114517	 +/-  0.00969344	(limited)
+r9Eff	  = -0.295332	 +/-  0.954882	(limited)
+vtxEff	  = -0.0418202	 +/-  0.925393	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00848013
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.24282
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.177299
+  11) eff_trig_In                    = -2.66454e-15
+  12) global_syst                    = -0.869893
+  13) global_syst_In                 = -2.66454e-15
+  14) id_eff_ee                      = -0.457894
+  15) id_eff_ee_In                   = -2.66454e-15
+  16) lumi_8TeV                      = -0.457894
+  17) lumi_8TeV_In                   = -2.66454e-15
+  18) mShift_cat3                    = 2.30926e-14
+  19) mShift_cat3_In                 = -2.22045e-15
+  20) mSmear_cat3                    = -0.0114517
+  21) mSmear_cat3_In                 = -2.22045e-15
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =    12.878
+  24) r9Eff                          = -0.295332
+  25) r9Eff_In                       = -2.66454e-15
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0418202
+  29) vtxEff_In                      = -2.66454e-15
+
+At r = 12.878011:	q_mu = 8.39656	q_A  = 17.80913	CLsb = 0.00188	CLb  = 0.90698	CLs  = 0.00207
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -1.4355343727717782
+Edm   = 1.95051334957788419e-07
+Nfcn  = 197
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00734857	 +/-  0.00101064	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.49308	 +/-  0.24044	(limited)
+eff_trig	  = -0.0449317	 +/-  0.995545	(limited)
+global_syst	  = -0.220473	 +/-  0.977515	(limited)
+id_eff_ee	  = -0.115858	 +/-  0.99074	(limited)
+lumi_8TeV	  = -0.115859	 +/-  0.990895	(limited)
+mShift_cat3	  = 0	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0105584	 +/-  0.0132413	(limited)
+r9Eff	  = -0.0974733	 +/-  0.898015	(limited)
+vtxEff	  = -0.0111162	 +/-  0.999375	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00734857
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.49308
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.0449317
+  11) eff_trig_In                    =         0
+  12) global_syst                    = -0.220473
+  13) global_syst_In                 =         0
+  14) id_eff_ee                      = -0.115858
+  15) id_eff_ee_In                   =         0
+  16) lumi_8TeV                      = -0.115859
+  17) lumi_8TeV_In                   =         0
+  18) mShift_cat3                    =         0
+  19) mShift_cat3_In                 =         0
+  20) mSmear_cat3                    = -0.0105584
+  21) mSmear_cat3_In                 =         0
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   8.73359
+  24) r9Eff                          = -0.0974733
+  25) r9Eff_In                       =         0
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0111162
+  29) vtxEff_In                      =         0
+
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -1.38500611411920249
+Edm   = 1.44308844866195071e-07
+Nfcn  = 198
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00725351	 +/-  0.00100641	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.51323	 +/-  0.239596	(limited)
+eff_trig	  = -0.0848587	 +/-  0.995066	(limited)
+global_syst	  = -0.416211	 +/-  0.973215	(limited)
+id_eff_ee	  = -0.218878	 +/-  0.987207	(limited)
+lumi_8TeV	  = -0.218879	 +/-  0.987216	(limited)
+mShift_cat3	  = 2.13163e-14	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114199	 +/-  0.0128168	(limited)
+r9Eff	  = -0.160099	 +/-  0.941965	(limited)
+vtxEff	  = -0.0206736	 +/-  0.991717	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00725351
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.51323
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.0848587
+  11) eff_trig_In                    = -2.66454e-15
+  12) global_syst                    = -0.416211
+  13) global_syst_In                 = -2.66454e-15
+  14) id_eff_ee                      = -0.218878
+  15) id_eff_ee_In                   = -2.66454e-15
+  16) lumi_8TeV                      = -0.218879
+  17) lumi_8TeV_In                   = -2.66454e-15
+  18) mShift_cat3                    = 2.13163e-14
+  19) mShift_cat3_In                 = -2.22045e-15
+  20) mSmear_cat3                    = -0.0114199
+  21) mSmear_cat3_In                 = -2.22045e-15
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   8.73359
+  24) r9Eff                          = -0.160099
+  25) r9Eff_In                       = -2.66454e-15
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0206736
+  29) vtxEff_In                      = -2.66454e-15
+
+At r = 8.733587:	q_mu = 2.18229	q_A  = 7.96019	CLsb = 0.06980	CLb  = 0.91055	CLs  = 0.07666
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.369408466571039207
+Edm   = 1.61789918772015029e-06
+Nfcn  = 179
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00801254	 +/-  0.00100984	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.34683	 +/-  0.237308	(limited)
+eff_trig	  = -0.0808687	 +/-  0.992771	(limited)
+global_syst	  = -0.39657	 +/-  0.980209	(limited)
+id_eff_ee	  = -0.20991	 +/-  0.978885	(limited)
+lumi_8TeV	  = -0.209905	 +/-  0.978958	(limited)
+mShift_cat3	  = 0	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0105806	 +/-  0.0115317	(limited)
+r9Eff	  = -0.15412	 +/-  0.899437	(limited)
+vtxEff	  = -0.0197388	 +/-  0.974958	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00801254
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.34683
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.0808687
+  11) eff_trig_In                    =         0
+  12) global_syst                    =  -0.39657
+  13) global_syst_In                 =         0
+  14) id_eff_ee                      =  -0.20991
+  15) id_eff_ee_In                   =         0
+  16) lumi_8TeV                      = -0.209905
+  17) lumi_8TeV_In                   =         0
+  18) mShift_cat3                    =         0
+  19) mShift_cat3_In                 =         0
+  20) mSmear_cat3                    = -0.0105806
+  21) mSmear_cat3_In                 =         0
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   10.8058
+  24) r9Eff                          =  -0.15412
+  25) r9Eff_In                       =         0
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0197388
+  29) vtxEff_In                      =         0
+
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.357895659472101058
+Edm   = 3.25478769114408717e-06
+Nfcn  = 202
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.0078847	 +/-  0.00106033	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.3741	 +/-  0.248063	(limited)
+eff_trig	  = -0.127734	 +/-  0.990992	(limited)
+global_syst	  = -0.628165	 +/-  0.951517	(limited)
+id_eff_ee	  = -0.329733	 +/-  0.967108	(limited)
+lumi_8TeV	  = -0.329735	 +/-  0.96707	(limited)
+mShift_cat3	  = 8.61533e-14	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114554	 +/-  0.010511	(limited)
+r9Eff	  = -0.2194	 +/-  0.929975	(limited)
+vtxEff	  = -0.0306225	 +/-  0.967245	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.0078847
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =   -1.3741
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.127734
+  11) eff_trig_In                    = -2.66454e-15
+  12) global_syst                    = -0.628165
+  13) global_syst_In                 = -2.66454e-15
+  14) id_eff_ee                      = -0.329733
+  15) id_eff_ee_In                   = -2.66454e-15
+  16) lumi_8TeV                      = -0.329735
+  17) lumi_8TeV_In                   = -2.66454e-15
+  18) mShift_cat3                    = 8.61533e-14
+  19) mShift_cat3_In                 = -2.22045e-15
+  20) mSmear_cat3                    = -0.0114554
+  21) mSmear_cat3_In                 = -2.22045e-15
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   10.8058
+  24) r9Eff                          =   -0.2194
+  25) r9Eff_In                       = -2.66454e-15
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0306225
+  29) vtxEff_In                      = -2.66454e-15
+
+At r = 10.805799:	q_mu = 4.82222	q_A  = 12.46082	CLsb = 0.01405	CLb  = 0.90890	CLs  = 0.01546
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.12560610070240133
+Edm   = 2.26962341444301503e-06
+Nfcn  = 156
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00762917	 +/-  0.00101085	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.43124	 +/-  0.240736	(limited)
+eff_trig	  = -0.0587164	 +/-  0.993852	(limited)
+global_syst	  = -0.289216	 +/-  0.972704	(limited)
+id_eff_ee	  = -0.15183	 +/-  0.981203	(limited)
+lumi_8TeV	  = -0.151827	 +/-  0.981233	(limited)
+mShift_cat3	  = 0	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0105698	 +/-  0.0124653	(limited)
+r9Eff	  = -0.120892	 +/-  0.910979	(limited)
+vtxEff	  = -0.0144146	 +/-  0.989342	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00762917
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.43124
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.0587164
+  11) eff_trig_In                    =         0
+  12) global_syst                    = -0.289216
+  13) global_syst_In                 =         0
+  14) id_eff_ee                      =  -0.15183
+  15) id_eff_ee_In                   =         0
+  16) lumi_8TeV                      = -0.151827
+  17) lumi_8TeV_In                   =         0
+  18) mShift_cat3                    =         0
+  19) mShift_cat3_In                 =         0
+  20) mSmear_cat3                    = -0.0105698
+  21) mSmear_cat3_In                 =         0
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   9.59043
+  24) r9Eff                          = -0.120892
+  25) r9Eff_In                       =         0
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0144146
+  29) vtxEff_In                      =         0
+
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.121647282498289502
+Edm   = 2.33648275694673181e-06
+Nfcn  = 156
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00752006	 +/-  0.000993255	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.45444	 +/-  0.237214	(limited)
+eff_trig	  = -0.101755	 +/-  0.993618	(limited)
+global_syst	  = -0.499015	 +/-  0.967762	(limited)
+id_eff_ee	  = -0.262785	 +/-  0.982749	(limited)
+lumi_8TeV	  = -0.262788	 +/-  0.982719	(limited)
+mShift_cat3	  = 4.79616e-14	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.011427	 +/-  0.0119475	(limited)
+r9Eff	  = -0.183818	 +/-  0.90531	(limited)
+vtxEff	  = -0.0246044	 +/-  0.9816	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00752006
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.45444
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.101755
+  11) eff_trig_In                    = -2.66454e-15
+  12) global_syst                    = -0.499015
+  13) global_syst_In                 = -2.66454e-15
+  14) id_eff_ee                      = -0.262785
+  15) id_eff_ee_In                   = -2.66454e-15
+  16) lumi_8TeV                      = -0.262788
+  17) lumi_8TeV_In                   = -2.66454e-15
+  18) mShift_cat3                    = 4.79616e-14
+  19) mShift_cat3_In                 = -2.22045e-15
+  20) mSmear_cat3                    = -0.011427
+  21) mSmear_cat3_In                 = -2.22045e-15
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   9.59043
+  24) r9Eff                          = -0.183818
+  25) r9Eff_In                       = -2.66454e-15
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0246044
+  29) vtxEff_In                      = -2.66454e-15
+
+At r = 9.590434:	q_mu = 3.15539	q_A  = 9.71255	CLsb = 0.03784	CLb  = 0.90990	CLs  = 0.04159
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0125946412365287117
+Edm   = 7.08691503459744704e-06
+Nfcn  = 134
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00750617	 +/-  0.00100991	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.45839	 +/-  0.240528	(limited)
+eff_trig	  = -0.0530924	 +/-  0.994251	(limited)
+global_syst	  = -0.257318	 +/-  0.976121	(limited)
+id_eff_ee	  = -0.137782	 +/-  0.980897	(limited)
+lumi_8TeV	  = -0.137781	 +/-  0.980924	(limited)
+mShift_cat3	  = 0	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0105651	 +/-  0.0126205	(limited)
+r9Eff	  = -0.110681	 +/-  0.895334	(limited)
+vtxEff	  = -0.0130463	 +/-  0.988118	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00750617
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.45839
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.0530924
+  11) eff_trig_In                    =         0
+  12) global_syst                    = -0.257318
+  13) global_syst_In                 =         0
+  14) id_eff_ee                      = -0.137782
+  15) id_eff_ee_In                   =         0
+  16) lumi_8TeV                      = -0.137781
+  17) lumi_8TeV_In                   =         0
+  18) mShift_cat3                    =         0
+  19) mShift_cat3_In                 =         0
+  20) mSmear_cat3                    = -0.0105651
+  21) mSmear_cat3_In                 =         0
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   9.21254
+  24) r9Eff                          = -0.110681
+  25) r9Eff_In                       =         0
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0130463
+  29) vtxEff_In                      =         0
+
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.0120718683642867912
+Edm   = 4.53094743205677091e-06
+Nfcn  = 135
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.0074019	 +/-  0.00100742	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.48058	 +/-  0.240055	(limited)
+eff_trig	  = -0.0938688	 +/-  0.993947	(limited)
+global_syst	  = -0.461257	 +/-  0.972359	(limited)
+id_eff_ee	  = -0.243928	 +/-  0.984933	(limited)
+lumi_8TeV	  = -0.243926	 +/-  0.984942	(limited)
+mShift_cat3	  = -1.9984e-14	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114246	 +/-  0.0121195	(limited)
+r9Eff	  = -0.172647	 +/-  0.876082	(limited)
+vtxEff	  = -0.0227156	 +/-  0.980615	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.0074019
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.48058
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.0938688
+  11) eff_trig_In                    = -2.66454e-15
+  12) global_syst                    = -0.461257
+  13) global_syst_In                 = -2.66454e-15
+  14) id_eff_ee                      = -0.243928
+  15) id_eff_ee_In                   = -2.66454e-15
+  16) lumi_8TeV                      = -0.243926
+  17) lumi_8TeV_In                   = -2.66454e-15
+  18) mShift_cat3                    = -1.9984e-14
+  19) mShift_cat3_In                 = -2.22045e-15
+  20) mSmear_cat3                    = -0.0114246
+  21) mSmear_cat3_In                 = -2.22045e-15
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   9.21254
+  24) r9Eff                          = -0.172647
+  25) r9Eff_In                       = -2.66454e-15
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0227156
+  29) vtxEff_In                      = -2.66454e-15
+
+At r = 9.212540:	q_mu = 2.70523	q_A  = 8.92036	CLsb = 0.05001	CLb  = 0.91019	CLs  = 0.05494
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.00254740059474461945
+Edm   = 1.36322768185847712e-07
+Nfcn  = 136
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00756257	 +/-  0.00101877	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.44594	 +/-  0.241308	(limited)
+eff_trig	  = -0.0558153	 +/-  0.993761	(limited)
+global_syst	  = -0.272359	 +/-  0.977843	(limited)
+id_eff_ee	  = -0.143252	 +/-  0.985562	(limited)
+lumi_8TeV	  = -0.143255	 +/-  0.985583	(limited)
+mShift_cat3	  = 0	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0105665	 +/-  0.0124619	(limited)
+r9Eff	  = -0.11543	 +/-  0.874786	(limited)
+vtxEff	  = -0.013737	 +/-  0.985841	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00756257
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.44594
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.0558153
+  11) eff_trig_In                    =         0
+  12) global_syst                    = -0.272359
+  13) global_syst_In                 =         0
+  14) id_eff_ee                      = -0.143252
+  15) id_eff_ee_In                   =         0
+  16) lumi_8TeV                      = -0.143255
+  17) lumi_8TeV_In                   =         0
+  18) mShift_cat3                    =         0
+  19) mShift_cat3_In                 =         0
+  20) mSmear_cat3                    = -0.0105665
+  21) mSmear_cat3_In                 =         0
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   9.39045
+  24) r9Eff                          =  -0.11543
+  25) r9Eff_In                       =         0
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.013737
+  29) vtxEff_In                      =         0
+
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.00258655178817186922
+Edm   = 1.16348246425482338e-06
+Nfcn  = 134
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00745665	 +/-  0.0010145	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.46844	 +/-  0.240452	(limited)
+eff_trig	  = -0.0981276	 +/-  0.993444	(limited)
+global_syst	  = -0.481166	 +/-  0.967054	(limited)
+id_eff_ee	  = -0.252302	 +/-  0.983975	(limited)
+lumi_8TeV	  = -0.252309	 +/-  0.98403	(limited)
+mShift_cat3	  = -1.9984e-14	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114248	 +/-  0.0119627	(limited)
+r9Eff	  = -0.178702	 +/-  0.856717	(limited)
+vtxEff	  = -0.0237819	 +/-  0.978586	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00745665
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.46844
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.0981276
+  11) eff_trig_In                    = -2.66454e-15
+  12) global_syst                    = -0.481166
+  13) global_syst_In                 = -2.66454e-15
+  14) id_eff_ee                      = -0.252302
+  15) id_eff_ee_In                   = -2.66454e-15
+  16) lumi_8TeV                      = -0.252309
+  17) lumi_8TeV_In                   = -2.66454e-15
+  18) mShift_cat3                    = -1.9984e-14
+  19) mShift_cat3_In                 = -2.22045e-15
+  20) mSmear_cat3                    = -0.0114248
+  21) mSmear_cat3_In                 = -2.22045e-15
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   9.39045
+  24) r9Eff                          = -0.178702
+  25) r9Eff_In                       = -2.66454e-15
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0237819
+  29) vtxEff_In                      = -2.66454e-15
+
+At r = 9.390451:	q_mu = 2.91305	q_A  = 9.28955	CLsb = 0.04393	CLb  = 0.91006	CLs  = 0.04827
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.000226112214567555068
+Edm   = 1.81198649869319664e-06
+Nfcn  = 88
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00756144	 +/-  9.97894e-05	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.4458	 +/-  0.0268518	(limited)
+eff_trig	  = -0.0535576	 +/-  0.993391	(limited)
+global_syst	  = -0.262897	 +/-  0.957152	(limited)
+id_eff_ee	  = -0.138203	 +/-  0.977721	(limited)
+lumi_8TeV	  = -0.138202	 +/-  0.977703	(limited)
+mShift_cat3	  = 0	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0105713	 +/-  0.0125265	(limited)
+r9Eff	  = -0.112371	 +/-  0.881374	(limited)
+vtxEff	  = -0.0131849	 +/-  0.986752	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00756144
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =   -1.4458
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.0535576
+  11) eff_trig_In                    =         0
+  12) global_syst                    = -0.262897
+  13) global_syst_In                 =         0
+  14) id_eff_ee                      = -0.138203
+  15) id_eff_ee_In                   =         0
+  16) lumi_8TeV                      = -0.138202
+  17) lumi_8TeV_In                   =         0
+  18) mShift_cat3                    =         0
+  19) mShift_cat3_In                 =         0
+  20) mSmear_cat3                    = -0.0105713
+  21) mSmear_cat3_In                 =         0
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   9.31625
+  24) r9Eff                          = -0.112371
+  25) r9Eff_In                       =         0
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0131849
+  29) vtxEff_In                      =         0
+
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -0.000241473533394384837
+Edm   = 1.83995582230180928e-06
+Nfcn  = 84
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00745562	 +/-  9.88714e-05	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.46832	 +/-  0.0261355	(limited)
+eff_trig	  = -0.0955925	 +/-  0.992899	(limited)
+global_syst	  = -0.469099	 +/-  0.956263	(limited)
+id_eff_ee	  = -0.246653	 +/-  0.975987	(limited)
+lumi_8TeV	  = -0.246653	 +/-  0.975979	(limited)
+mShift_cat3	  = -1.9984e-14	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0114292	 +/-  0.0120289	(limited)
+r9Eff	  = -0.175694	 +/-  0.86483	(limited)
+vtxEff	  = -0.0231772	 +/-  0.979309	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00745562
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.46832
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.0955925
+  11) eff_trig_In                    = -2.66454e-15
+  12) global_syst                    = -0.469099
+  13) global_syst_In                 = -2.66454e-15
+  14) id_eff_ee                      = -0.246653
+  15) id_eff_ee_In                   = -2.66454e-15
+  16) lumi_8TeV                      = -0.246653
+  17) lumi_8TeV_In                   = -2.66454e-15
+  18) mShift_cat3                    = -1.9984e-14
+  19) mShift_cat3_In                 = -2.22045e-15
+  20) mSmear_cat3                    = -0.0114292
+  21) mSmear_cat3_In                 = -2.22045e-15
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   9.31625
+  24) r9Eff                          = -0.175694
+  25) r9Eff_In                       = -2.66454e-15
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0231772
+  29) vtxEff_In                      = -2.66454e-15
+
+At r = 9.316248:	q_mu = 2.82599	q_A  = 9.13520	CLsb = 0.04637	CLb  = 0.91010	CLs  = 0.05096
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -5.28287225328740969e-05
+Edm   = 4.76964805539103083e-07
+Nfcn  = 84
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00756173	 +/-  0.000112167	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.44592	 +/-  0.0235232	(limited)
+eff_trig	  = -0.0546174	 +/-  0.993469	(limited)
+global_syst	  = -0.267669	 +/-  0.961416	(limited)
+id_eff_ee	  = -0.140872	 +/-  0.978964	(limited)
+lumi_8TeV	  = -0.140871	 +/-  0.979002	(limited)
+mShift_cat3	  = 0	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.0105689	 +/-  0.0124834	(limited)
+r9Eff	  = -0.114108	 +/-  0.878119	(limited)
+vtxEff	  = -0.0134414	 +/-  0.986353	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00756173
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.44592
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.0546174
+  11) eff_trig_In                    =         0
+  12) global_syst                    = -0.267669
+  13) global_syst_In                 =         0
+  14) id_eff_ee                      = -0.140872
+  15) id_eff_ee_In                   =         0
+  16) lumi_8TeV                      = -0.140871
+  17) lumi_8TeV_In                   =         0
+  18) mShift_cat3                    =         0
+  19) mShift_cat3_In                 =         0
+  20) mSmear_cat3                    = -0.0105689
+  21) mSmear_cat3_In                 =         0
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   9.35188
+  24) r9Eff                          = -0.114108
+  25) r9Eff_In                       =         0
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0134414
+  29) vtxEff_In                      =         0
+
+Minuit2Minimizer: Minimize with max-calls 5000 convergence for edm < 0.01 strategy 0
+Minuit2Minimizer : Valid minimum - status = 0
+FVAL  = -5.51748310278459003e-05
+Edm   = 4.76242575862350061e-07
+Nfcn  = 84
+PhotonsMass_bkg_8TeV_ExpPAR1_cat3	  = 0.00745587	 +/-  0.000109813	(limited)
+PhotonsMass_bkg_8TeV_ExpPAR2_cat3	  = -1.46843	 +/-  0.0233935	(limited)
+eff_trig	  = -0.0968263	 +/-  0.993053	(limited)
+global_syst	  = -0.474594	 +/-  0.957061	(limited)
+id_eff_ee	  = -0.249748	 +/-  0.976925	(limited)
+lumi_8TeV	  = -0.249748	 +/-  0.976865	(limited)
+mShift_cat3	  = -1.9984e-14	 +/-  0.989616	(limited)
+mSmear_cat3	  = -0.011427	 +/-  0.0119913	(limited)
+r9Eff	  = -0.177395	 +/-  0.860718	(limited)
+vtxEff	  = -0.0234674	 +/-  0.979017	(limited)
+   0) MH                             =       200
+   1) PhotonsMass_bkg_8TeV_ExpPAR1_cat3 = 0.00745587
+   2) PhotonsMass_bkg_8TeV_ExpPAR2_cat3 =  -1.46843
+   3) ReducedMass_sig_Nneg_cat3      = 5.52844e-09
+   4) ReducedMass_sig_Npos_cat3      =   3.64451
+   5) ReducedMass_sig_alphaCBneg_cat3 =   1.25204
+   6) ReducedMass_sig_alphaCBpos_cat3 =  -2.17447
+   7) ReducedMass_sig_frac_cat3      =  0.993353
+   8) ReducedMass_sig_mean_cat3      = -0.00999969
+   9) ReducedMass_sig_sigma_cat3     = 0.00152891
+  10) eff_trig                       = -0.0968263
+  11) eff_trig_In                    = -2.66454e-15
+  12) global_syst                    = -0.474594
+  13) global_syst_In                 = -2.66454e-15
+  14) id_eff_ee                      = -0.249748
+  15) id_eff_ee_In                   = -2.66454e-15
+  16) lumi_8TeV                      = -0.249748
+  17) lumi_8TeV_In                   = -2.66454e-15
+  18) mShift_cat3                    = -1.9984e-14
+  19) mShift_cat3_In                 = -2.22045e-15
+  20) mSmear_cat3                    = -0.011427
+  21) mSmear_cat3_In                 = -2.22045e-15
+  22) n_exp_bincat3_proc_bkg         =     25865
+  23) r                              =   9.35188
+  24) r9Eff                          = -0.177395
+  25) r9Eff_In                       = -2.66454e-15
+  26) rooSigmaCorr_cat3              =  0.945449
+  27) sigmaBW_var_cat3               =       0.1
+  28) vtxEff                         = -0.0234674
+  29) vtxEff_In                      = -2.66454e-15
+
+At r = 9.351884:	q_mu = 2.86751	q_A  = 9.20906	CLsb = 0.04519	CLb  = 0.91008	CLs  = 0.04966
+
+ -- Asymptotic -- 
+Observed Limit: r < 9.3519
+Expected  2.5%: r < 3.7663
+Expected 16.0%: r < 4.7291
+Expected 50.0%: r < 6.2812
+Expected 84.0%: r < 8.4595
+Expected 97.5%: r < 11.0781
+
+Done in 18.33 min (cpu), 18.68 min (real)
+`higgsCombine_w0.10_channel3.Asymptotic.mH200.root' -> `/afs/cern.ch/work/s/soffi/CMSSW611-Analysis/src/h2gglobe/ChiaraFitLimits/channel3/higgsCombine_w0.10_channel3.Asymptotic.mH200.root'
+removed `higgsCombine_w0.10_channel3.Asymptotic.mH200.root'
+
+Job finished at Tue May 13 14:22:41 CEST 2014 on node 
+ under linux version Scientific Linux CERN SLC release 6.5 (Carbon)
+
+CERN statistics: This process used approximately : 0:33:13 KSI2K hours (1993 KSI2K seconds)
+                 This process corresponds to     : 2:09:33 HS06  hours (7773 HS06  seconds)
